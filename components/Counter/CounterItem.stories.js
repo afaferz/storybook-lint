@@ -1,5 +1,5 @@
 export default {
-    title: 'NuxtLinkStorie',
+    title: 'CounterItem',
 }
 
-export const NuxtLinkStorie = () => '<NuxtLinkStorie />'
+export const CounterItem = () => '<CounterItem />'

@@ -2,6 +2,7 @@
     <v-btn
         :height="heightButton"
         :width="widthButton"
+        :color="color"
         :disabled="disabled"
         @click.stop="$emit('action')"
     >
@@ -11,19 +12,24 @@
 
 <script>
 export default {
+    name: 'ButtonControl',
     props: {
         height: {
             type: [String, Number],
-            default: 150,
+            default: 50,
         },
         width: {
             type: [String, Number],
             default: 150,
         },
+        color: {
+            type: String,
+            default: '#212121',
+        },
         disabled: {
             type: Boolean,
-            default: false
-        }
+            default: false,
+        },
     },
     computed: {
         heightButton() {

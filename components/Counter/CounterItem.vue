@@ -8,9 +8,10 @@
             <ButtonControl
                 :width="150"
                 :height="50"
+                :disabled="disableDecrement"
+                :color="'red'"
                 @action="decrement"
             >
-                <!-- :disabled="" -->
                 <template #content>
                     <span class="font-weight-black">
                         <v-icon large>mdi-minus</v-icon>
@@ -27,7 +28,12 @@
                     <span class="font-weight-black"> RANDOM NUMBER </span>
                 </template>
             </ButtonControl>
-            <ButtonControl :width="150" :height="50" @action="increment">
+            <ButtonControl
+                :width="150"
+                :height="50"
+                :disabled="disableIncrement"
+                @action="increment"
+            >
                 <template #content>
                     <span class="font-weight-black">
                         <v-icon large>mdi-plus</v-icon>
@@ -48,6 +54,12 @@ export default {
     computed: {
         count() {
             return this.$store.getters.GET_COUNT
+        },
+        disableIncrement() {
+            return this.count >= 100
+        },
+        disableDecrement() {
+            return this.count === 0
         },
     },
     methods: {

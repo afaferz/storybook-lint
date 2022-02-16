@@ -20,7 +20,7 @@ export const mutations = {
 
 export const actions = {
     GENERATE_RANDOM_NUMBER({ commit }) {
-        const randomValue = Math.random(0, 100)
+        const randomValue = Math.floor(Math.random() * 100)
 
         commit('UPDATE_COUNT', randomValue)
     },
